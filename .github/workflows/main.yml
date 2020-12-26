@@ -40,7 +40,7 @@ jobs:
         run: yarn build
       
       - name: Install Surge
-        run: npx install --global surge
+        run: npm install --global surge
       
       - name: deploy to surge
         run: surge ./build exp-tracker-riaz.surge.sh --token ${{ secrets.SURGE.TOKEN }}
