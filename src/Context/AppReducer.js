@@ -1,7 +1,15 @@
-
+// eslint-disable-next-line
 export default (state, action) => {
     switch(action.type) {
+        case 'DELETE_TRANSACTION':
+            return{
+                ...state,transaction: state.transactions.filter(transaction => transaction.id !== action.payload)
+            }
+        case 'ADD TRANSACTION':
+            return{
+                ...state,transactions: [action.payload, ...state.transactions]
+            }
         default:
             return state;
-    }
+    };
 }
